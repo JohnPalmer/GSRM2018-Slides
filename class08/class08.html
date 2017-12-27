@@ -6,18 +6,18 @@
 
 	<title>Research Methods</title>
 
-	<link rel="stylesheet" href="css/reveal.css">
-	<link rel="stylesheet" href="css/theme/beige.css">
+	<link rel="stylesheet" href="../css/reveal.css">
+	<link rel="stylesheet" href="../css/theme/beige.css">
 
 	<!-- Theme used for syntax highlighting of code -->
-	<link rel="stylesheet" href="lib/css/zenburn.css">
+	<link rel="stylesheet" href="../lib/css/zenburn.css">
 
 	<!-- Printing and PDF exports -->
 	<script>
 		var link = document.createElement( 'link' );
 		link.rel = 'stylesheet';
 		link.type = 'text/css';
-		link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
 		document.getElementsByTagName( 'head' )[0].appendChild( link );
 	</script>
 </head>
@@ -52,13 +52,13 @@
 <section>
 <h3>Visualizing Confidence Band</h3>
 
-<img class="stretch" src="images/fp_reg_ci.png">
+<img class="stretch" src="../images/fp_reg_ci.png">
 </section>
 
 
 <section>
 <h3>Pairwise Comparisons</h3>
-<img class="stretch" src="images/fp_pairs.png">
+<img class="stretch" src="../images/fp_pairs.png">
 </section>
 
 <section>
@@ -88,7 +88,7 @@ $$\hat{y} = \alpha + \beta_1x_1 + \beta_2x_2$$
 
 <section>
 <h3>Visualizing in 3-Dimensional Space</h3>
-<a href="images/fp_3Dreg/index.html">3D</a>
+<a href="../images/fp_3Dreg/index.html">3D</a>
 </section>
 
 <section>
@@ -119,13 +119,13 @@ $$\hat{y} = \alpha + \beta_1{x_1} + \beta_2{\textrm{D}}$$
 
 <section>
 <h3>Visualizing Categorical Differences</h3>
-<img class="stretch" src="images/fp_reg_cat.png">
+<img class="stretch" src="../images/fp_reg_cat.png">
 </section>
 
 
 <section>
 <h3>Visualizing the Model</h3>
-<img class="stretch" src="images/fp_reg_ints.png">
+<img class="stretch" src="../images/fp_reg_ints.png">
 </section>
 
 <section>
@@ -166,7 +166,7 @@ $$\hat{y} = \alpha + \beta_1x_1 + \beta_2\textrm{D} + \beta_3x_1\textrm{D}$$
 
 <section>
 <h3>Visualizing the Model</h3>
-<img class="stretch" src="images/fp_reg_ints_slopes.png">
+<img class="stretch" src="../images/fp_reg_ints_slopes.png">
 </section>
 
 
@@ -199,7 +199,7 @@ $$\hat{y} = \alpha + \beta_1x_1 + \beta_2x_2 + \beta_3x_1x_2$$
 
 <section>
 <h3>Visualizing in 3-Dimensional Space</h3>
-<a href="images/fp_int_3Dreg/index.html">3D</a>
+<a href="../images/fp_int_3Dreg/index.html">3D</a>
 </section>
 
 <section>
@@ -232,7 +232,7 @@ $$\hat{y} = \alpha + \beta_1x_1 + \beta_2x_1^2$$
 
 <section>
 <h3>Beyond Straight Lines</h3>
-<img class="stretch" src="images/fp_reg_quad.png">
+<img class="stretch" src="../images/fp_reg_quad.png">
 </section>
 
 <section>
@@ -299,7 +299,7 @@ $$\hat{y} = \alpha + \beta_1x_1 + \beta_2x_1^2$$
 </section>
 
 
-							<section data-background="images/pencils.jpg" data-state="footer_pencils">
+							<section data-background="../images/pencils.jpg" data-state="footer_pencils">
 								<div style="background-color: rgba(255, 255, 255, .95); padding:20px;">
 									<h2>Assignments</h2>
 									<ul>
@@ -315,8 +315,8 @@ $$\hat{y} = \alpha + \beta_1x_1 + \beta_2x_1^2$$
 						</div>
 					</div>
 
-					<script src="lib/js/head.min.js"></script>
-					<script src="js/reveal.js"></script>
+					<script src="../lib/js/head.min.js"></script>
+					<script src="../js/reveal.js"></script>
 
 					<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
@@ -325,11 +325,11 @@ $$\hat{y} = \alpha + \beta_1x_1 + \beta_2x_1^2$$
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
-				{ src: 'plugin/markdown/marked.js' },
-				{ src: 'plugin/markdown/markdown.js' },
-				{ src: 'plugin/notes/notes.js', async: true },
-				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-				{ src: 'plugin/math/math.js', async: true }
+				{ src: '../plugin/markdown/marked.js' },
+				{ src: '../plugin/markdown/markdown.js' },
+				{ src: '../plugin/notes/notes.js', async: true },
+				{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: '../plugin/math/math.js', async: true }
 
 				]
 			});
