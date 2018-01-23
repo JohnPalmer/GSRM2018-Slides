@@ -1,11 +1,12 @@
 # clearing memory
 rm(list = ls())
 
-# setting working directory
+# setting working directory. NOTE HERE YOU WILL NEED TO CHANGE THE DIRECTORY PATH TO MATCH WHATEVER DIRECTPRY YOU HAVE 
+# PUT THE DATA FILE IN. 
 setwd("~/Google Drive File Stream/My Drive/upf_courses/GSRM/2018/R_demos/initial_survey")
 
 # reading the original data from csv file exported from Aula Global 
-D <- read.csv("InitialSurvey_anon.csv", stringsAsFactors = FALSE)
+D <- read.csv("InitialSurvey.csv", stringsAsFactors = FALSE)
 
 # review the survey questions (which are the names of this data frame)
 names(D)
