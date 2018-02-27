@@ -1,14 +1,14 @@
 #########################
-### Sessio 13: R Demo ###
+### Class 15: R Demo ###
 #########################
 
-## Paquets
+## Libraries
 library(tidyverse)
 library(rgdal)
 library(spdep)
 library(RColorBrewer)
 
-## Dades
+## Data
 brut = read_csv("bruticia.csv") %>% select(X="X Coordinate (State Plane)", Y="Y Coordinate (State Plane)") %>% filter(!is.na(X) & !is.na(Y))
 
 llum = read_csv("llum.csv") %>% select(X="X Coordinate (State Plane)", Y="Y Coordinate (State Plane)") %>% filter(!is.na(X) & !is.na(Y))
@@ -17,7 +17,9 @@ D = read_csv("NYC_combo_tab.csv") %>% select(ZIPCODE, POPULATION, N_dirty_co, N_
 
 E = read_csv("entrades_codi_postal.csv") %>% group_by(ZIPCODE) %>% summarise(entrades=sum(N_entrades)) 
 
-## Agrupament
+zipcode_polygons = readOGR("nyc_zipcodes.geojson", "OGRGeoJSON")
+
+## Clustering
 clusters = kmeans(brut,9)
 
 plot(brut, col=clusters$cluster, pch=20)
@@ -26,23 +28,7 @@ clusters
 
 sum(clusters$withinss)
 
-# Quin es el millor valor per k? Probem valors differents:
-K=20
-ss = rep(NA, K)
-for (i in 1:K) {
-  clusters=kmeans(brut, centers=i)
-  ss[i] = sum(clusters$withinss)
-}
-
-plot(1:K, ss, type="b")
-
-clusters = kmeans(brut,15)
-plot(brut, col=clusters$cluster, pch=20)
-
-# Ara proba amb llums
-
-
-## Unions
+## joining data
 D = left_join(D, E, by="ZIPCODE")
 
 # Models
@@ -51,13 +37,11 @@ ggplot(D, aes(x=brut, y=assalt_per_pop)) + geom_point( )
 M = lm(assalt_per_pop~brut, data=D)
 summary(M)
 
-# ara proba llum i entrades tambe
+# now with lights and entrances
 M = lm(assalt_per_pop~brut+llum+entrades, data=D)
 summary(M)
 
-# read polygons
-zipcode_polygons = readOGR("zipcodes.geojson", "OGRGeoJSON")
-
+# merge zipcode polygons with data
 zipcodes = merge(zipcode_polygons, D, by="ZIPCODE")
 
 zipcodes$popdensitat = zipcodes$pop/zipcodes$AREA
