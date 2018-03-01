@@ -1,7 +1,6 @@
 library(data.table)
 library(ggplot2)
 
-setwd("~/Dropbox/upf_global_studies/2017/slides/global_studies_research_methods")
 
 gft = fread('gft_spain.csv')
 
